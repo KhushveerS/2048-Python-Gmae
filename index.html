@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2048 — Optimized</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <div class="title">2048</div>
+      <div class="scores">
+        <div class="score">
+          <div class="label">Score</div>
+          <div id="score" class="value">0</div>
+        </div>
+        <div class="score">
+          <div class="label">Best</div>
+          <div id="best" class="value">0</div>
+        </div>
+      </div>
+    </header>
+
+    <div class="controls">
+      <button id="newGame" class="btn">New Game</button>
+    </div>
+
+    <div id="board" class="board" aria-label="2048 board" role="grid" aria-rowcount="4" aria-colcount="4">
+      <!-- Static background cells -->
+      <div class="grid">
+        <!-- 16 background cells -->
+        <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+        <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+        <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+        <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+      </div>
+      <!-- Dynamic tiles go here -->
+      <div id="tiles" class="tiles" aria-hidden="true"></div>
+    </div>
+
+    <footer class="footer">
+      <div>Use arrow keys or swipe. Merge the tiles to reach 2048!</div>
+      <div class="small">Built with performance optimizations: move tables, rAF batching, minimal DOM diffs.</div>
+    </footer>
+  </div>
+
+  <script src="main.js"></script>
+  <noscript>This game requires JavaScript to run.</noscript>
+</body>
+</html>
+
+
